@@ -2,7 +2,8 @@
 Flask-Markdown
 --------------
 
-Description goes here...
+This is a small module to load markdown processing into
+your flask.
 
 Links
 `````
