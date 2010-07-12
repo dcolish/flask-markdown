@@ -9,7 +9,7 @@ Links
 
 * `documentation <http://packages.python.org/Flask-Markdown>`_
 * `development version
-  <http://github.com/USERNAME/REPOSITORY/zipball/master#egg=Flask-Markdown-dev>`_
+<http://github.com/dcolish/flask-markdown/zipball/master#egg=Flask-Markdown-dev>`_
 
 """
 from setuptools import setup
@@ -18,18 +18,19 @@ from setuptools import setup
 setup(
     name='Flask-Markdown',
     version='0.1',
-    url='<enter URL here>',
+    url='http://github.com/dcolish/flask-markdown',
     license='BSD',
     author='Dan Colish',
-    author_email='your-email-here@example.com',
-    description='<enter short description here>',
+    author_email='dcolish@gmail.com',
+    description='Small extension to make using markup easy',
     long_description=__doc__,
     packages=['flaskext'],
     namespace_packages=['flaskext'],
     zip_safe=False,
     platforms='any',
     install_requires=[
-        'Flask'
+        'Flask-jinja2extender',
+        'markdown',
     ],
     classifiers=[
         'Development Status :: 4 - Beta',
