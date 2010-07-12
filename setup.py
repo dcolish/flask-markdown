@@ -10,7 +10,7 @@ Links
 
 * `documentation <http://packages.python.org/Flask-Markdown>`_
 * `development version
-<http://github.com/dcolish/flask-markdown/zipball/master#egg=Flask-Markdown-dev>`_
+  <http://github.com/dcolish/flask-markdown/zipball/master#egg=Flask-Markdown-dev>`_
 
 """
 from setuptools import setup
@@ -18,7 +18,7 @@ from setuptools import setup
 
 setup(
     name='Flask-Markdown',
-    version='0.1.1',
+    version='dev',
     url='http://github.com/dcolish/flask-markdown',
     license='BSD',
     author='Dan Colish',
