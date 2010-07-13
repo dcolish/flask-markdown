@@ -23,7 +23,7 @@ setup(
     license='BSD',
     author='Dan Colish',
     author_email='dcolish@gmail.com',
-    description='Small extension to make using markup easy',
+    description='Small extension to make using markdown easy',
     long_description=__doc__,
     packages=['flaskext'],
     namespace_packages=['flaskext'],

@@ -3,7 +3,20 @@
     flaskext.markdown
     ~~~~~~~~~~~~~~~~~
 
-    Description of the module goes here...
+    Markdown filter class for Flask
+    To use::
+       from flaskext.markdown import Markdown
+       # reconfigure app jinja enviroment
+       md = Markdown(app)
+
+    Then in your template::
+        {% filter markdown %}
+        Your Markdown
+        =============
+        {% endfilter %}
+
+    You can also do::
+        {{ mymarkdown | markdown}}
 
     :copyright: (c) 2010 by Dan Colish.
     :license: BSD, MIT see LICENSE for more details.

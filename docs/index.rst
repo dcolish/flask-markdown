@@ -20,18 +20,18 @@ or alternatively if you have pip installed::
 How to Use
 ----------
 
-When initializing your applicattion run::
+    To use::
+       from flaskext.markdown import Markdown
+       md = Markdown(app)
 
-from flaskext.markdown import load_markdown
-app = Flask(__name__)
-load_markdown(app)
+    Then in your template::
+        {% filter markdown %}
+        Your Markdown
+        =============
+        {% endfilter %}
 
-Your template can then process any markdown using::
-
-{% markdown %}
-{{ lesson.text }}
-{% endmarkdown %}
-
+    You can also do::
+        {{ mymarkdown | markdown}}
 
 Contents:
 
