@@ -9,13 +9,18 @@
     :license: BSD, MIT see LICENSE for more details.
 """
 from __future__ import absolute_import
-from flask import current_app
-import markdown as md
+from flask import current_app, Markup
+import markdown2 as md2
 
 
-def markdown(value):
-    return md.markdown(value)
+class Markdown(md2.Markdown):
 
+    def __init__(self, app, *args, **kw):
+        super(Markdown, self).__init__(*args, **kw)
+        app.jinja_env.filters.update({'markdown': self.__call__})
 
-def load_markdown():
-    current_app.jinja_env.filters.append(markdown)
+    def __call__(self, stream):
+        if hasattr(current_app, 'genshi_instance'):
+            return self.convert(stream)
+        else:
+            return Markup(self.convert(stream))

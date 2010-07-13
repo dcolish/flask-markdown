@@ -30,8 +30,7 @@ setup(
     zip_safe=False,
     platforms='any',
     install_requires=[
-        'Flask-jinja2extender',
-        'markdown',
+        'markdown2',
     ],
     classifiers=[
         'Development Status :: 4 - Beta',
