@@ -21,16 +21,19 @@ How to Use
 ----------
 
     To use::
+
        from flaskext.markdown import Markdown
        md = Markdown(app)
 
     Then in your template::
+
         {% filter markdown %}
         Your Markdown
         =============
         {% endfilter %}
 
     You can also do::
+
         {{ mymarkdown | markdown}}
 
 Contents:

@@ -2,7 +2,7 @@
 Flask-Markdown
 --------------
 
-This is a small module to load markdown processing into
+This is a small module to a markdown processing filter into
 your flask.
 
 Links
@@ -18,7 +18,7 @@ from setuptools import setup
 
 setup(
     name='Flask-Markdown',
-    version='dev',
+    version='0.2',
     url='http://github.com/dcolish/flask-markdown',
     license='BSD',
     author='Dan Colish',
