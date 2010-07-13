@@ -30,7 +30,7 @@ setup(
     zip_safe=False,
     platforms='any',
     install_requires=[
-        'markdown2',
+        'markdown',
     ],
     classifiers=[
         'Development Status :: 4 - Beta',

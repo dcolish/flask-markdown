@@ -23,10 +23,10 @@
 """
 from __future__ import absolute_import
 from flask import Markup
-import markdown2 as md2
+import markdown as md
 
 
-class Markdown(md2.Markdown):
+class Markdown(md.Markdown):
 
     def __init__(self, app, *args, **kw):
         super(Markdown, self).__init__(app, *args, **kw)
