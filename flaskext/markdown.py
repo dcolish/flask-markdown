@@ -26,11 +26,12 @@ from flask import Markup
 import markdown as md
 
 
-class Markdown(md.Markdown):
+class Markdown(object):
 
     def __init__(self, app, *args, **kw):
-        super(Markdown, self).__init__(app, *args, **kw)
+        # markdown still uses old style classes
+        self._instance = md.Markdown(*args, **kw)
         app.jinja_env.filters.setdefault('markdown', self)
 
     def __call__(self, stream):
-        return Markup(self.convert(stream))
+        return Markup(self._instance.convert(stream))
