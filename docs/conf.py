@@ -17,16 +17,16 @@ import sys, os
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 sys.path.append(os.path.abspath('_themes'))
+sys.path.append(os.path.abspath('..'))
 
 # -- General configuration -----------------------------------------------------
-
 # If your documentation needs a minimal Sphinx version, state it here.
 #needs_sphinx = '1.0'
 
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
-extensions = []
 
+extensions = ['sphinx.ext.autodoc', 'sphinx.ext.intersphinx']
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
@@ -166,6 +166,9 @@ html_static_path = ['_static']
 # Output file base name for HTML help builder.
 htmlhelp_basename = 'FlaskMarkdowndoc'
 
+html_theme_options = {
+    'github_fork':      'dcolish/flask-markdown',
+}
 
 # -- Options for LaTeX output --------------------------------------------------
 
@@ -214,3 +217,8 @@ man_pages = [
     ('index', 'flaskmarkdown', u'Flask Markdown Documentation',
      [u'Dan Colish'], 1)
 ]
+
+intersphinx_mapping = {
+    'http://docs.python.org/': None,
+    'http://flask.pocoo.org/docs': None
+}
