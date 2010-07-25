@@ -29,10 +29,11 @@ setup(
     namespace_packages=['flaskext'],
     zip_safe=False,
     platforms='any',
-    test_suite = "nose.collector",
+
     install_requires=[
         'markdown',
         ],
+    test_suite="nose.collector",
     tests_require=[
         'nose',
         ],
