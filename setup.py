@@ -29,9 +29,13 @@ setup(
     namespace_packages=['flaskext'],
     zip_safe=False,
     platforms='any',
+    test_suite = "nose.collector",
     install_requires=[
         'markdown',
-    ],
+        ],
+    tests_require=[
+        'nose',
+        ],
     classifiers=[
         'Development Status :: 4 - Beta',
         'Environment :: Web Environment',
@@ -41,5 +45,5 @@ setup(
         'Programming Language :: Python',
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
         'Topic :: Software Development :: Libraries :: Python Modules'
-    ]
+        ],
 )
