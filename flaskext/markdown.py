@@ -29,18 +29,22 @@ import markdown as md
 
 
 class Markdown(object):
-    """wrapper for Markdown objects"""
-    def __init__(self, app, *args, **kw):
+    """
+    Simple wrapper class for Markdown objects, any options that are available
+    for markdown may be passed as keyword arguments like so::
+
+      md = Markdown(app,
+                    extensions=['footnotes'],
+                    extension_configs={'footnotes': ('PLACE_MARKER','~~~~~~~~')},
+                    safe_mode=True,
+                    output_format='html4',
+                    )
+    """
+
+    def __init__(self, app, **markdown_options):
         """Markdown uses old style classes"""
-        self._instance = md.Markdown(*args, **kw)
+        self._instance = md.Markdown(**markdown_options)
         app.jinja_env.filters.setdefault('markdown', self)
 
     def __call__(self, stream):
         return Markup(self._instance.convert(stream))
-
-    def extension(self, extension, config):
-        """Decorator for registering an extension"""
-        def dectorator(f):
-            self._instance.registerExtensions(extension, config)
-            return f
-        return dectorator

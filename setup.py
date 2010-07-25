@@ -18,7 +18,7 @@ from setuptools import setup
 
 setup(
     name='Flask-Markdown',
-    version='dev',
+    version='0.2',
     url='http://github.com/dcolish/flask-markdown',
     license='BSD',
     author='Dan Colish',
