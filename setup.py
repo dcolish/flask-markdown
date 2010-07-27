@@ -29,7 +29,6 @@ setup(
     namespace_packages=['flaskext'],
     zip_safe=False,
     platforms='any',
-
     install_requires=[
         'markdown',
         ],

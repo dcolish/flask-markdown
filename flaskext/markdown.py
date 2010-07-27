@@ -33,12 +33,12 @@ class Markdown(object):
     Simple wrapper class for Markdown objects, any options that are available
     for markdown may be passed as keyword arguments like so::
 
-      md = Markdown(app,
-                    extensions=['footnotes'],
-                    extension_configs={'footnotes': ('PLACE_MARKER','~~~~~~~~')},
-                    safe_mode=True,
-                    output_format='html4',
-                    )
+      Markdown(app,
+               extensions=['footnotes'],
+               extension_configs={'footnotes': ('PLACE_MARKER','~~~~~~~~')},
+               safe_mode=True,
+               output_format='html4',
+               )
     """
 
     def __init__(self, app, **markdown_options):

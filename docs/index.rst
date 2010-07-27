@@ -25,14 +25,14 @@ or alternatively if you have pip installed::
 How to Use
 ----------
 
-    To use you must construct a :class:`Markdown` with your
-    :class:`~flask.Flask` instance.
+To use you must construct a :class:`Markdown` with your :class:`~flask.Flask` instance.
+
 ::
 
        from flaskext.markdown import Markdown
-       md = Markdown(app)
+       Markdown(app)
 
-    Then in your template
+Then in your template
 ::
 
         {% filter markdown %}
@@ -40,7 +40,8 @@ How to Use
         =============
         {% endfilter %}
 
-    You can also do::
+You can also do
+::
 
         {{ mkd|markdown }}
 

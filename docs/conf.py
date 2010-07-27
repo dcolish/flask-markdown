@@ -167,6 +167,7 @@ html_static_path = ['_static']
 htmlhelp_basename = 'FlaskMarkdowndoc'
 
 html_theme_options = {
+    'index_logo': 'logo.png',
     'github_fork':      'dcolish/flask-markdown',
 }
 
