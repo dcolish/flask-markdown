@@ -25,6 +25,7 @@ You can also do::
 """
 from __future__ import absolute_import
 from flask import Markup
+from inspect import getmodule
 import markdown as md
 
 
@@ -48,3 +49,20 @@ class Markdown(object):
 
     def __call__(self, stream):
         return Markup(self._instance.convert(stream))
+
+    def makeExtension(self, configs={}):
+        """
+        You must either force the decorated class to be imported
+        or define it in the same file you instanciate Markdown
+        """
+        def decorator(ext_cls):
+            return self.registerExtension(ext_cls, configs)
+        return decorator
+
+    def registerExtension(self, ext_cls, configs=None):
+        """This will register an extension class with self._instance"""
+        instance = ext_cls()
+        self._instance.registerExtensions([instance], configs)
+        module = getmodule(ext_cls)
+        module.makeExtension = ext_cls
+        return ext_cls
