@@ -45,12 +45,16 @@ You can also do
 
         {{ mkd|markdown }}
 
+
+Optionally, you can keep a reference to the Markdown instance and use that
+to register custom extensions by calling :func:`Markdown.register_extension` or
+decorating the extension class with :func:`Markdown.extend`
+
 API Reference
 -------------
 
 .. autoclass:: Markdown
    :members:
-
 
 .. _`Flask`: http://flask.pocoo.org/
 .. _`Markdown`: http://www.freewisdom.org/projects/python-markdown/
