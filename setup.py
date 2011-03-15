@@ -30,6 +30,7 @@ setup(
     zip_safe=False,
     platforms='any',
     install_requires=[
+        'Flask',
         'markdown',
         ],
     test_suite="nose.collector",
