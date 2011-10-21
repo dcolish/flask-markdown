@@ -1,4 +1,4 @@
-include LICENSE 
+include LICENSE
 recursive-include tests *
 recursive-exclude tests *.pyc
 recursive-exclude tests *.pyc
