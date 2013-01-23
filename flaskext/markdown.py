@@ -30,6 +30,7 @@ decorating the extension class with :func:`extend`
 """
 from __future__ import absolute_import
 from flask import Markup
+from jinja2 import evalcontextfilter, escape
 import markdown as md
 from markdown import (
     blockprocessors,
@@ -40,6 +41,23 @@ from markdown import (
 
 __all__ = ['blockprocessors', 'Extension', 'Markdown', 'preprocessors']
 
+@evalcontextfilter
+def markdown_filter(eval_ctx, stream):
+    """
+    Called by Jinja2 when evaluating the Markdown filter. Utilizes the
+    Markdown instance stored in the Flask app config.
+
+    :param eval_ctx: Evaluation context from Jinja2, used for autoescape
+    :param stream: Content passed to the filter
+    """
+
+    if (eval_ctx.environment.app.config['markdown_autoescape'] == True and
+        eval_ctx.autoescape):
+        return Markup(eval_ctx.environment.app.config['markdown_instance'].
+                      _instance.convert(escape(stream)))
+    else:
+        return Markup(eval_ctx.environment.app.config['markdown_instance'].
+                      _instance.convert(stream))
 
 class Markdown(object):
     """
@@ -51,10 +69,16 @@ class Markdown(object):
                     extension_configs={'footnotes': ('PLACE_MARKER','~~~~~~~~')},
                     safe_mode=True,
                     output_format='html4',
+                    autoescape=False
                    )
 
     You can then call :func:`register_extension` to load custom extensions into
     the Markdown instance or use the :func:`extend` decorator
+
+    Additionally, passing autoescape=True will cause the Markdown filter to
+    obey the Jinja2 autoescape parameter in the context of the filter
+    evaluation. By default, this is disabled, and the content passed to the
+    Markdown filter will not be escaped.
 
     :param app: Your Flask app instance
     :param markdown_options: Keyword args for the Markdown instance
@@ -63,7 +87,11 @@ class Markdown(object):
     def __init__(self, app, **markdown_options):
         """Markdown uses old style classes"""
         self._instance = md.Markdown(**markdown_options)
-        app.jinja_env.filters.setdefault('markdown', self)
+        autoescape = ('autoescape' in markdown_options and
+                      markdown_options['autoescape'] == True)
+        app.config['markdown_autoescape'] = autoescape
+        app.config['markdown_instance'] = self
+        app.jinja_env.filters['markdown'] = markdown_filter
 
     def __call__(self, stream):
         return Markup(self._instance.convert(stream))
