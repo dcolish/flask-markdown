@@ -4,12 +4,11 @@ from flask import Flask, render_template_string
 from flaskext.markdown import Extension, Markdown
 from mdx_simple import SimpleExtension, SimplePreprocessor
 
-app = Flask(__name__)
-app.debug = True
-md = Markdown(app)
-
 
 def run_client():
+    app = Flask(__name__)
+    app.debug = True
+    md = Markdown(app)
 
     @app.route('/test_inline')
     def view_render_inline():
