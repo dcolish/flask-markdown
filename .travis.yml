@@ -7,3 +7,8 @@ install:
   - "python setup.py install"
 
 script: python setup.py test
+
+branches:
+  only:
+    - master
+    - integration
