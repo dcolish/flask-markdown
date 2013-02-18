@@ -41,7 +41,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Flask Markdown'
-copyright = u'2010, Dan Colish'
+copyright = u'2013, Dan Colish'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -168,7 +168,7 @@ htmlhelp_basename = 'FlaskMarkdowndoc'
 
 html_theme_options = {
     'index_logo': 'logo.png',
-    'github_fork':      'dcolish/flask-markdown',
+    'github_fork': 'dcolish/flask-markdown',
 }
 
 # -- Options for LaTeX output --------------------------------------------------
@@ -210,8 +210,6 @@ latex_documents = [
 #latex_domain_indices = True
 
 
-# -- Options for manual page output --------------------------------------------
-
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
@@ -220,6 +218,6 @@ man_pages = [
 ]
 
 intersphinx_mapping = {
-    'http://docs.python.org/': None,
-    'http://flask.pocoo.org/docs': None
+    'python': ('http://docs.python.org/', None),
+    'flask': ('http://flask.pocoo.org/docs', None),
 }
