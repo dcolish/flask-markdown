@@ -76,7 +76,7 @@ class Markdown(object):
             'markdown', self.__build_filter(self.auto_escape))
 
     def __call__(self, stream):
-        return Markup(self._instance.convert(stream))
+        return Markup(self._instance.reset().convert(stream))
 
     def __build_filter(self, app_auto_escape):
         @evalcontextfilter
