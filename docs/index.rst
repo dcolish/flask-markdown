@@ -5,7 +5,7 @@ Welcome to Flask Markdown's documentation!
 
 
 Flask-Markdown adds support for `Markdown`_ to your `Flask`_
-application.  There is little to no documentation for it, but 
+application.  There is little to no documentation for it, but
 it works just the same as markdown would normally.
 
 All source code can be found at `Github`_
