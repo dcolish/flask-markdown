@@ -25,8 +25,7 @@ setup(
     author_email='dcolish@gmail.com',
     description='Small extension to make using markdown easy',
     long_description=__doc__,
-    packages=['flaskext'],
-    namespace_packages=['flaskext'],
+    packages=['flask_markdown'],
     zip_safe=False,
     platforms='any',
     install_requires=[

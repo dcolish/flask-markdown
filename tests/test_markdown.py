@@ -1,8 +1,7 @@
 from functools import wraps
 
 from flask import Flask, render_template_string
-
-from flaskext.markdown import Extension, Markdown
+from flask.ext.markdown import Extension, Markdown
 from mdx_simple import SimpleExtension, SimplePreprocessor
 
 
