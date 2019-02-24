@@ -68,10 +68,17 @@ class Markdown(object):
     :param markdown_options: Keyword args for the Markdown instance
     """
 
-    def __init__(self, app, auto_escape=False, **markdown_options):
+    def __init__(self, app=None, auto_escape=False, **markdown_options):
         """Markdown uses old style classes"""
         self.auto_escape = auto_escape
         self._instance = md.Markdown(**markdown_options)
+        if app:
+            self.init_app(app)
+
+    def init_app(self, app):
+        """
+        Registers the rendering method as template filter.
+        """
         app.jinja_env.filters.setdefault(
             'markdown', self.__build_filter(self.auto_escape))
 
