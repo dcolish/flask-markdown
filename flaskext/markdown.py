@@ -86,9 +86,10 @@ class Markdown(object):
             self.init_app(app)
     
     def init_app(self, app):
-        """This callback can be used to initialize an application for the
-        use with this markdon setup. 
         """
+        Registers the rendering method as template filter.
+        """
+      
         app.jinja_env.filters.setdefault(
             'markdown', self.__build_filter(self.auto_escape))
             

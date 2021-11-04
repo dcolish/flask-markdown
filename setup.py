@@ -31,7 +31,7 @@ setup(
     platforms='any',
     install_requires=[
         'Flask',
-        'markdown',
+        'Markdown',
         ],
     test_suite="nose.collector",
     tests_require=[
