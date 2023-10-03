@@ -19,7 +19,7 @@ from setuptools import setup
 setup(
     name='Flask-Markdown',
     version='dev',
-    url='http://github.com/dcolish/flask-markdown',
+    url='http://github.com/MorizMensi/flask-markdown',
     license='BSD',
     author='Dan Colish',
     author_email='dcolish@gmail.com',
@@ -38,7 +38,7 @@ setup(
         'nose',
         ],
     classifiers=[
-        'Development Status :: 4 - Beta',
+        'Development Status :: 5 - Beta',
         'Environment :: Web Environment',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: BSD License',
