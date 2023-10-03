@@ -1,24 +1,9 @@
-"""
-Flask-Markdown
---------------
-
-This is a small module to a markdown processing filter into
-your flask.
-
-Links
-`````
-
-* `documentation <http://packages.python.org/Flask-Markdown>`_
-* `development version
-  <http://github.com/dcolish/flask-markdown/zipball/master#egg=Flask-Markdown-dev>`_
-
-"""
 from setuptools import setup
 
 
 setup(
     name='Flask-Markdown',
-    version='dev',
+    version='1',
     url='http://github.com/MorizMensi/flask-markdown',
     license='BSD',
     author='Dan Colish',
