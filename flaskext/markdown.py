@@ -29,8 +29,15 @@ decorating the extension class with :func:`extend`
 :license: BSD, MIT see LICENSE for more details.
 """
 from __future__ import absolute_import
-from flask import Markup
-from jinja2 import evalcontextfilter, escape
+try:
+    from flask import Markup
+except:
+    from markupsafe import Markup
+try:
+    from jinja2 import evalcontextfilter, escape
+except:
+    from jinja2 import pass_eval_context as evalcontextfilter
+    from markupsafe import escape
 import markdown as md
 from markdown import (
     blockprocessors,
